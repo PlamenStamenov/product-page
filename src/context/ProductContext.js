@@ -9,7 +9,12 @@ const ProductProvider = (props) => {
     const [displayProducts, setDisplayProducts] = useState([]);
     const [loadCount, setLoadCount] = useState(1);
     const [sort, setSort] = useState('name_asc');
-    const [filter, setFilter] = useState({ color: null, price: null });
+    
+    // Get the unique categories
+    const categories = Array.from(new Set(productsData.map(product => product.category)));
+    
+    // Initialize the filter with the first category
+    const [filter, setFilter] = useState({ color: null, price: null, category: categories[0] });
 
     const addToCart = (id) => {
         console.log(`Product with id ${id} added to cart`);
@@ -17,14 +22,24 @@ const ProductProvider = (props) => {
 
     useEffect(() => {
         setProducts(productsData);
-        setDisplayProducts(productsData.slice(0, loadCount * 20));
+        // Now displayProducts will only contain products from the first category at first
+        setDisplayProducts(productsData.filter(product => product.category === filter.category).slice(0, loadCount * 20));
     }, [loadCount]);
 
     useEffect(() => {
         // Implement sorting and filtering logic here
         // This will depend on the specific fields in your JSON data
         // Here we're just re-displaying all products
-        setDisplayProducts(products.slice(0, loadCount * 20));
+
+        let filteredProducts = products;
+
+        if (filter.category) {
+            filteredProducts = filteredProducts.filter(
+                (product) => product.category === filter.category
+            );
+        }
+
+        setDisplayProducts(filteredProducts.slice(0, loadCount * 20));
     }, [sort, filter, products, loadCount]);
 
     return (
