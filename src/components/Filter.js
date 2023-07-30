@@ -31,6 +31,14 @@ const Filter = () => {
                     <input type="checkbox" id="Blue" value="Blue" onChange={handleColorChange} />
                     <label htmlFor="Blue">Blue</label>
                 </div>
+                <div>
+                    <input type="checkbox" id="Brown" value="Brown" onChange={handleColorChange} />
+                    <label htmlFor="Brown">Brown</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="Black" value="Black" onChange={handleColorChange} />
+                    <label htmlFor="Black">Black</label>
+                </div>
             </div>
 
             <div className="filter-section">

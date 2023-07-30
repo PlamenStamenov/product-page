@@ -1,8 +1,32 @@
-.sort {
-    text-align: right;
-    margin-bottom: 20px;
+.Sort{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #F2F2F2;
+    border-radius: 10px;
+    gap: 10px;
 
-    select {
-        padding: 5px;
+    .sorting-elements {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 15px;
+        background: #F2F2F2;
+        border-radius: 10px;
+        gap: 10px;
+
+        label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        select {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+            background: #fff;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+        }
     }
 }

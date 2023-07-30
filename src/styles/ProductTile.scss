@@ -1,32 +1,102 @@
 .ProductTile {
+    --transition-duration: 0.3s;
     background: #fff;
     box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
     border-radius: 10px;
     overflow: hidden;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow var(--transition-duration) ease-in-out, transform var(--transition-duration) ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    will-change: transform;
 
     &:hover {
         box-shadow: 0px 2px 10px rgba(0,0,0,0.15);
+        transform: scale(1.02); /* subtle grow effect on hover */
     }
+
 
     img {
         width: 100%;
-        height: 200px;
+        height: 300px;
         object-fit: cover;
+        transition: transform var(--transition-duration) ease-in-out; /* animate image on hover */
+
+        &:hover {
+            transform: scale(1.05); /* subtle zoom effect on hover */
+        }
     }
 
-    .content {
-        padding: 15px;
+
+    .product-details {
+        background-color: #eee;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+        font-family: 'Roboto', sans-serif; /* modern, clean font */
 
         h2 {
             font-size: 1.2em;
             margin-bottom: 10px;
             color: #333;
+            letter-spacing: 0.5px; /* slight letter spacing for a more modern look */
         }
 
-        p {
-            margin: 0;
-            color: #666;
+        .product-details p {
+            color: #666;  
+            font-size: 1rem; /* adjust size as needed */
+            line-height: 1.5; /* adjust line spacing as needed */
+            margin-bottom: 15px; /* space below the text */
+            text-align: justify; /* align text to both left and right */
+            hyphens: auto; /* automatically add hyphens when necessary */
+        }
+
+        .price {
+            color: #888;
+            text-decoration: line-through;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .discounted {
+            text-decoration: none;
+            color: #c40e0e; /* optional, to gray out the discounted price */
+        }
+
+        .add-to-cart-btn {
+            --transition-duration: 0.3s;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            background-color: #FF6347; /* or any color of your choice */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color var(--transition-duration) ease-in-out, transform var(--transition-duration) ease-in-out;
+            will-change: transform;
+        
+            /* Add a subtle shadow to give the button some depth */
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            
+            /* Make the text unselectable for better UX */
+            user-select: none;
+        
+            &:hover {
+                background-color: #FF4500; /* a darker shade for hover state */
+                transform: scale(1.05); /* subtle grow effect on hover */
+            }
+        
+            &:active {
+                transform: scale(0.95); /* subtle shrink effect on click */
+            }
+        
+            /* Add styles for disabled state (if needed) */
+            &:disabled {
+                background-color: #ccc;
+                cursor: not-allowed;
+            }
         }
     }
 }

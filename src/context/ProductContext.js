@@ -5,18 +5,12 @@ import productsData from '../data/products.json';
 export const ProductContext = createContext();
 
 const ProductProvider = (props) => {
-    const [products, setProducts] = useState([]);
-    const [displayProducts, setDisplayProducts] = useState([]);
-    const [loadCount, setLoadCount] = useState(8);
-    const [sort, setSort] = useState('name_asc');
-    const [productsCount, setProductsCount] = useState({});
-
+    // Initialize products directly with productsData
+    const [products, setProducts] = useState(productsData);
+    
     // Get the unique categories
     const categories = Array.from(new Set(productsData.map(product => product.category)));
-
-    // Get the total number of products and the number of products displayed
-    const totalProducts = products.length;
-    const displayedProducts = displayProducts.length;
+    console.log(categories);
 
     // Initialize the filter state
     const [filter, setFilter] = useState({ 
@@ -24,36 +18,40 @@ const ProductProvider = (props) => {
             Red: false,
             Green: false,
             Blue: false,
-            Yellow: false,
-            Pink: false,
-            Orange: false,
+            Black: false,
+            Brown: false
         },
         price: {
             '0-50': false,
             '51-100': false,
             '101-200': false,
             '201-500': false,
-            '501+': false,
+            '501+': false
         },
         category: categories[0] 
     });
+
+    const [displayProducts, setDisplayProducts] = useState([]);
+    const [loadCount, setLoadCount] = useState(10);
+    const [sort, setSort] = useState('name_asc');
+    // Calculate productsCount directly
+    let productsCount = {};
+    categories.forEach(category => {
+        productsCount[category] = productsData.filter(product => product.category === category).length;
+    });
+    const [isLoading, setIsLoading] = useState(true);
+
+    // Get the total number of products and the number of products displayed
+    const totalProducts = products.length;
+    const displayedProducts = displayProducts.length;
 
     const addToCart = (id) => {
         console.log(`Product with id ${id} added to cart`);
     };
 
     useEffect(() => {
-        let productsCount = {};
-        categories.forEach(category => {
-            productsCount[category] = productsData.filter(product => product.category === category).length;
-        });
-        setProductsCount(productsCount);
-    }, [products]);
-
-    useEffect(() => {
-        setProducts(productsData);
         // Now displayProducts will only contain products from the first category at first
-        setDisplayProducts(productsData ? productsData.filter(product => product.category === filter.category).slice(0, loadCount * 8) : []);
+        setDisplayProducts(productsData ? productsData.filter(product => product.category === filter.category).slice(0, loadCount * 10) : []);
     }, [loadCount]);
 
     useEffect(() => {
@@ -125,7 +123,8 @@ const ProductProvider = (props) => {
             filter,
             setFilter,
             productsCount,
-            addToCart
+            addToCart,
+            categories
         }}>
             {props.children}
         </ProductContext.Provider>

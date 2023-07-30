@@ -1,0 +1,18 @@
+.ProductDescription {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #F2F2F2;
+    border-radius: 10px;
+    gap: 10px;
+
+    .category-name {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .description {
+        color: #666;  
+    }
+}
