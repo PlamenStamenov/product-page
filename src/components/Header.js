@@ -5,7 +5,7 @@ import '../styles/Header.scss';
 function Header() {
     const { setFilter } = useContext(ProductContext);
 
-    const categories = ['Bags', 'Shoes'];
+    const categories = ['Bags', 'Shoes', 'Accessories'];
 
     const handleCategoryClick = (category) => {
         setFilter((prevFilter) => ({
@@ -19,6 +19,7 @@ function Header() {
             <div className="logo">Logo</div>
             <nav className="navigation">
                 <ul>
+                    <li onClick={() => handleCategoryClick('')}>All</li>
                     {categories.map((category) => (
                         <li key={category} onClick={() => handleCategoryClick(category)}>
                             {category}
