@@ -10,7 +10,7 @@ const ProductProvider = (props) => {
     
     // Get the unique categories
     const categories = Array.from(new Set(productsData.map(product => product.category)));
-    console.log(categories);
+    //console.log(categories);
 
     // Initialize the filter state
     const [filter, setFilter] = useState({ 
@@ -22,24 +22,25 @@ const ProductProvider = (props) => {
             Brown: false
         },
         price: {
-            '0-50': false,
-            '51-100': false,
-            '101-200': false,
-            '201-500': false,
-            '501+': false
+            '0-20': false,
+            '21-40': false,
+            '41-60': false,
+            '61-80': false,
+            '81-100': false
         },
         category: categories[0] 
     });
 
     const [displayProducts, setDisplayProducts] = useState([]);
-    const [loadCount, setLoadCount] = useState(10);
+    const [loadCount, setLoadCount] = useState(8);
     const [sort, setSort] = useState('name_asc');
+    const [totalFilteredProducts, setTotalFilteredProducts] = useState(0);
+
     // Calculate productsCount directly
     let productsCount = {};
     categories.forEach(category => {
         productsCount[category] = productsData.filter(product => product.category === category).length;
     });
-    const [isLoading, setIsLoading] = useState(true);
 
     // Get the total number of products and the number of products displayed
     const totalProducts = products.length;
@@ -51,7 +52,7 @@ const ProductProvider = (props) => {
 
     useEffect(() => {
         // Now displayProducts will only contain products from the first category at first
-        setDisplayProducts(productsData ? productsData.filter(product => product.category === filter.category).slice(0, loadCount * 10) : []);
+        setDisplayProducts(productsData ? productsData.filter(product => product.category === filter.category).slice(0, loadCount * 8) : []);
     }, [loadCount]);
 
     useEffect(() => {
@@ -107,8 +108,9 @@ const ProductProvider = (props) => {
             default:
                 break;
         }
-
+        setTotalFilteredProducts(filteredProducts.length);
         setDisplayProducts(filteredProducts.slice(0, loadCount));
+        
     }, [sort, filter, products, loadCount]);
 
     return (
@@ -124,7 +126,8 @@ const ProductProvider = (props) => {
             setFilter,
             productsCount,
             addToCart,
-            categories
+            categories,
+            totalFilteredProducts
         }}>
             {props.children}
         </ProductContext.Provider>

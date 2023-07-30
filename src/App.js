@@ -7,6 +7,7 @@ import Filter from './components/Filter';
 import Sort from './components/Sort';
 import LoadMore from './components/LoadMore';
 import '../src/styles/App.scss';
+import BackToTopButton from './components/BackToTopButton';
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                 </div>
                 <Footer />
             </ProductProvider>
+            <BackToTopButton />
         </div>
 
     );

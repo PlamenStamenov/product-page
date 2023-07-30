@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/ProductDescription.scss';
 
-const ProductDescription = ({ name, description, category }) => {
+const ProductDescription = ( {category} ) => {
     return (
         <div className="ProductDescription">
             <h2 className="category-name">{category}</h2>

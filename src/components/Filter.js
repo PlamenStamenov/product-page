@@ -44,24 +44,24 @@ const Filter = () => {
             <div className="filter-section">
                 <label>Price:</label>
                 <div>
-                    <input type="checkbox" id="0-50" value="0-50" onChange={handlePriceChange} />
-                    <label htmlFor="0-50">$0-$50</label>
+                    <input type="checkbox" id="0-20" value="0-20" onChange={handlePriceChange} />
+                    <label htmlFor="0-20">$0-$20</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="51-100" value="51-100" onChange={handlePriceChange} />
-                    <label htmlFor="51-100">$51-$100</label>
+                    <input type="checkbox" id="21-40" value="21-40" onChange={handlePriceChange} />
+                    <label htmlFor="21-40">$21-$40</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="101-200" value="101-200" onChange={handlePriceChange} />
-                    <label htmlFor="101-200">$101-$200</label>
+                    <input type="checkbox" id="41-60" value="41-60" onChange={handlePriceChange} />
+                    <label htmlFor="41-60">$41-$60</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="201-500" value="201-500" onChange={handlePriceChange} />
-                    <label htmlFor="201-500">$201-$500</label>
+                    <input type="checkbox" id="61-80" value="61-80" onChange={handlePriceChange} />
+                    <label htmlFor="61-80">$61-$80</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="501-" value="501-" onChange={handlePriceChange} />
-                    <label htmlFor="501-">Above $500</label>
+                    <input type="checkbox" id="81-100" value="81-100" onChange={handlePriceChange} />
+                    <label htmlFor="81-100">$81-$100</label>
                 </div>
             </div>
         </div>

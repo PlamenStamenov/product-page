@@ -21,7 +21,7 @@ function Header() {
 
     const handleCategoryClick = (category) => {
         setActiveCategory(category);
-        setLoadCount(10); // Reset load count to 1 when a category is clicked
+        setLoadCount(8); // Reset load count to 1 when a category is clicked
         setFilter((prevFilter) => ({
             ...prevFilter,
             category,

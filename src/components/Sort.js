@@ -4,7 +4,7 @@ import '../styles/Sort.scss';
 import ProductDescription from "./ProductDescription";
 
 const Sort = () => {
-    const { setSort, name, description, category, filter } = useContext(ProductContext);
+    const { setSort, filter } = useContext(ProductContext);
 
     const handleSortChange = (event) => {
         setSort(event.target.value);
