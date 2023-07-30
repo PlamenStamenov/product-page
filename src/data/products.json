@@ -1,0 +1,50 @@
+[
+    {
+      "id": "1",
+      "name": "Brown Leather Bag",
+      "description": "Made from high-quality leather. Features multiple compartments and durable zippers.",
+      "category": "Bags",
+      "price": 79.99,
+      "discountedPrice": 59.99,
+      "rating": 4.5,
+      "image": "https://example.com/images/product1.jpg",
+      "color": "Brown",
+      "availableSizes": ["Small", "Medium", "Large"]
+    },
+    {
+      "id": "2",
+      "name": "Black Running Shoes",
+      "description": "Lightweight running shoes with breathable mesh fabric. Great for both indoor and outdoor running.",
+      "category": "Shoes",
+      "price": 49.99,
+      "discountedPrice": null,
+      "rating": 4.2,
+      "image": "https://example.com/images/product2.jpg",
+      "color": "Black",
+      "availableSizes": ["6", "7", "8", "9", "10"]
+    },
+    {
+      "id": "3",
+      "name": "Red Leather Bag",
+      "description": "Stylish bag made from premium red leather. Comes with a detachable shoulder strap.",
+      "category": "Bags",
+      "price": 89.99,
+      "discountedPrice": 79.99,
+      "rating": 4.8,
+      "image": "https://example.com/images/product3.jpg",
+      "color": "Red",
+      "availableSizes": ["Small", "Medium"]
+    },
+    {
+      "id": "4",
+      "name": "Blue Running Shoes",
+      "description": "Comfortable and durable running shoes with a unique blue design. Suitable for all terrains.",
+      "category": "Shoes",
+      "price": 59.99,
+      "discountedPrice": null,
+      "rating": 4.4,
+      "image": "https://example.com/images/product4.jpg",
+      "color": "Blue",
+      "availableSizes": ["6", "7", "8", "9", "10", "11"]
+    }
+  ]

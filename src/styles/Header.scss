@@ -1,0 +1,38 @@
+Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+
+    .title {
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    nav {
+        ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin-right: 10px;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #ddd;
+                    }
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
