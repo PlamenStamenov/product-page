@@ -6,7 +6,7 @@ const LoadMore = () => {
     const { loadCount, setLoadCount } = useContext(ProductContext);
 
     const handleLoadMoreClick = () => {
-        setLoadCount(loadCount + 1);
+        setLoadCount(loadCount + 8);
     };
 
     return (
