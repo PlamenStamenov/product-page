@@ -1,18 +1,20 @@
 .ProductDescription {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 15px;
+    align-items: baseline;
     background: #F2F2F2;
     border-radius: 10px;
-    gap: 10px;
+    gap: 75px;
+    margin-left: 15px;
 
     .category-name {
         font-weight: 600;
         color: #333;
+        width: 100px;
     }
 
-    .description {
-        color: #666;  
+    .category-description{
+        font-size: 0.9em;
+        color: #666;
     }
 }

@@ -8,6 +8,10 @@ body {
     h1, h2, h3, h4, h5, h6 {
         margin: 0;
     }
+
+    p {
+        margin: 0;
+    }
     
     .main {
         display: grid;
@@ -27,6 +31,7 @@ body {
         flex-direction: column;
         gap: 20px;
 
+
         .Header {
             grid-area: header;
         }
@@ -35,17 +40,28 @@ body {
             grid-area: filter;
         }
 
-
         .products_layout {
             grid-area: main;
             display: flex;
             flex-wrap: wrap;
             box-sizing: border-box;
             flex-direction: column;
+            margin-right: 20px;
         }
 
         .Footer {
             grid-area: footer;
+        }
+
+        @media (width <= 600px) {
+            grid-template-areas: 
+            "header header header"
+            "main main main"
+            "main main main"
+            "main main main"
+            "main main main"
+            "footer footer footer";
+            
         }
     }
 }

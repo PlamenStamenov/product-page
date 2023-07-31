@@ -12,7 +12,7 @@ const Sort = () => {
 
     return (
         <div className="Sort">
-            <ProductDescription name={filter.category} description={filter.category} category={filter.category} />
+            <ProductDescription category={filter.category} />
             <div className="sorting-elements">
                 <label htmlFor="sort">Sort by:</label>
                 <select id="sort" onChange={handleSortChange}>

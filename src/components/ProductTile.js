@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ProductContext } from "../context/ProductContext";
 import Rating from "./Rating";
 import '../styles/ProductTile.scss';
@@ -8,6 +8,7 @@ const ProductTile = ({ product }) => {
 
     const handleAddToCartClick = () => {
         addToCart(product.id);
+        alert('Product added to cart');
     };
 
     return (
