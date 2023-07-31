@@ -12,23 +12,29 @@ const ProductTile = ({ product }) => {
 
     return (
         <div className="ProductTile">
-            <img src={product.image} alt={product.name} />
+            <div className="product-img">
+                <img src={product.image} alt={product.name} />
+            </div>
 
             <div className="product-details">
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
-                {product.discountedPrice ? (
-                    <>
-                        <span className="price">${product.discountedPrice}</span>
-                        <span className="price discounted">${product.price}</span>
-                    </>
-                ) : (
-                    <span className="price">${product.price}</span>
-                )}
+
                 <div className="rating">
                     <Rating value={product.rating} />
                 </div>
-                <div className="rating">{product.rating}</div>
+
+                <div className="prices">
+                    {product.discountedPrice ? (
+                        <>
+                            <span className="price">${product.discountedPrice}</span>
+                            <span className="price discounted">${product.price}</span>
+                        </>
+                    ) : (
+                        <span className="price">${product.price}</span>
+                    )}
+                </div>
+
                 <button onClick={handleAddToCartClick} className="add-to-cart-btn">Add to Cart</button>
             </div>
         </div>

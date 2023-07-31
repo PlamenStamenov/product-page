@@ -15,14 +15,14 @@ function App() {
         <div className="main">
             <ProductProvider>
                 <Header />
-                <div className="content">
-                    <Filter />
-                    <div className="products_layout">
-                        <Sort />
-                        <ProductGrid />
-                        <LoadMore />
-                    </div>
+
+                <Filter />
+                <div className="products_layout">
+                    <Sort />
+                    <ProductGrid />
+                    <LoadMore />
                 </div>
+
                 <Footer />
             </ProductProvider>
             <BackToTopButton />

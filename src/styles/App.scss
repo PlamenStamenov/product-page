@@ -8,31 +8,44 @@ body {
     h1, h2, h3, h4, h5, h6 {
         margin: 0;
     }
-
+    
     .main {
-        display: flex;
+        display: grid;
         width: 100%;
         max-width: 100%;
         margin: 0 auto;
+        grid-template-areas: 
+            "header header header header"
+            "filter main main main"
+            "filter main main main"
+            "filter main main main"
+            "filter main main main"
+            "footer footer footer footer";
         font-family: Arial, sans-serif;
         background-color: #f9f9f9;
         box-sizing: border-box;
         flex-direction: column;
+        gap: 20px;
 
-        .content {
+        .Header {
+            grid-area: header;
+        }
+
+        .Filter {
+            grid-area: filter;
+        }
+
+
+        .products_layout {
+            grid-area: main;
             display: flex;
-            justify-content: space-between;
-            width: 1200px;
-            margin: 0 auto;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            flex-direction: column;
+        }
 
-            .products_layout {
-                display: flex;
-                flex-wrap: wrap;
-                padding: 35px 0;
-                box-sizing: border-box;
-                width: calc(100% - 300px);
-                flex-direction: column;
-            }
+        .Footer {
+            grid-area: footer;
         }
     }
 }
