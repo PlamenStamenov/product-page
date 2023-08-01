@@ -6,6 +6,7 @@ function Header() {
     const { setLoadCount, setFilter, productsCount, filter, totalProducts, categories } = useContext(ProductContext);
     const [selectedCategory, setSelectedCategory] = useState(filter.category);
     const [activeCategory, setActiveCategory] = useState(categories[0]); // Initially set to first category
+    const [navOpen, setNavOpen] = useState(false);
 
     useEffect(() => {
         setSelectedCategory(filter.category);
@@ -32,7 +33,12 @@ function Header() {
         <header className="Header">
             <div className="header-container">
                 <div className="logo">Logo</div>
-                <nav className="navigation">
+                <div className="hamburger" onClick={() => setNavOpen(!navOpen)}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <nav className={`navigation ${navOpen ? 'open' : ''}`}>
                     <ul>
                         <li onClick={() => handleCategoryClick('')}>
                             All {activeCategory === '' && <span>{totalProducts}</span>}

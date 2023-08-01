@@ -31,4 +31,14 @@
             box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
         }
     }
+
+    @media (max-width: 600px) {
+        gap: 30px;
+        flex-wrap: wrap;
+        
+        .sorting-elements {
+            justify-content: flex-start;
+            margin-left: 15px;
+        }
+    }
 }

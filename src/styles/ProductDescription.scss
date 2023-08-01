@@ -17,4 +17,9 @@
         font-size: 0.9em;
         color: #666;
     }
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

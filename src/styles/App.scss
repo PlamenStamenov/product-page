@@ -53,15 +53,18 @@ body {
             grid-area: footer;
         }
 
-        @media (width <= 600px) {
+        @media (max-width: 600px) {
             grid-template-areas: 
             "header header header"
             "main main main"
             "main main main"
             "main main main"
             "main main main"
-            "footer footer footer";
+            "footer footer footer";  
             
+            .products_layout {
+                margin-left: 20px;
+            }
         }
     }
 }
