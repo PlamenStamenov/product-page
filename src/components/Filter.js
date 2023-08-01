@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { ProductContext } from '../context/ProductContext';
 import '../styles/Filter.scss';
 
 const Filter = () => {
     const { filter, setFilter } = useContext(ProductContext);
+    const [isExpanded, setIsExpanded] = useState(false);
 
     const handleColorChange = (event) => {
         setFilter({ ...filter, color: {...filter.color, [event.target.value]: event.target.checked} });
@@ -13,11 +14,15 @@ const Filter = () => {
         setFilter({ ...filter, price: {...filter.price, [event.target.value]: event.target.checked} });
     };
 
+    const toggleExpanded = () => {
+        setIsExpanded(!isExpanded);
+    }
+
     return (
         <div className="Filter">
             <h3>Filter by:</h3>
-            
-            <div className="filter-section">
+            <button className="expandButton" onClick={toggleExpanded}>Expand/Collapse Filters</button>
+            <div className={`filter-section ${isExpanded ? '' : 'hide'}`}>
                 <label>Color:</label>
                 <div>
                     <input type="checkbox" id="Red" value="Red" onChange={handleColorChange} />
@@ -41,7 +46,7 @@ const Filter = () => {
                 </div>
             </div>
 
-            <div className="filter-section">
+            <div className={`filter-section ${isExpanded ? '' : 'hide'}`}>
                 <label>Price:</label>
                 <div>
                     <input type="checkbox" id="0-20" value="0-20" onChange={handlePriceChange} />
