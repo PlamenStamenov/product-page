@@ -20,7 +20,7 @@ The application includes the following features:
 
 6. **Category Navigation** - Users can easily navigate between different categories of products using the category navigation bar.
 
-7. **Product Details** - Users can view detailed information about a product. The product details are displayed below the product image in the product tile. The product details include name, description, rating, price, discounted price, and Add to Cart button.
+7. **Product Details** - Users can view detailed information about a product. The product details are displayed below the product image in the product tile. The product details include name, description, rating, price, discounted price, and Add to Cart button. Fetched product data is used to populate the product details.
 
 8. **Add to Cart** - When clicking the Add to Cart button it triggers an alet that the broduct is added to the shopping cart.
 

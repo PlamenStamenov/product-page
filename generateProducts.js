@@ -10,15 +10,18 @@ for (let i = 1; i <= 50; i++) {
     const color = colors[Math.floor(Math.random() * colors.length)];
     const size = sizes[Math.floor(Math.random() * sizes.length)];
 
+    const price = (Math.random() * 100).toFixed(2);
+    const discountedPrice = (price * 0.8).toFixed(2);  // 20% less than regular price
+
     const product = {
         id: i.toString(),
         name: `${color} ${category} ${i}`,
         description: `This is a ${size} ${color} ${category}`,
         category: category,
-        price: (Math.random() * 100).toFixed(2),
-        discountedPrice: (Math.random() * 100).toFixed(2),
+        price: price,
+        discountedPrice: discountedPrice,
         rating: (Math.random() * 5).toFixed(2),
-        image: `https://example.com/images/product${i}.jpg`,
+        image: `../../assets/${color.toLowerCase()}-${category.toLowerCase()}.jpg`,
         color: color,
         availableSizes: [size]
     };
