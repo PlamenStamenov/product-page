@@ -26,6 +26,38 @@ The application includes the following features:
 
 
 
+## generateProducts.js
+
+This script is used to generate mock data for the products. It outputs a JSON file with product data that can be used for the development and testing purposes.
+
+### How to run it
+
+1. Navigate to the project's root directory.
+
+2. Run the script by executing the following command: node generateProducts.js.
+
+The script will generate a file named products.json under the src/data directory containing the product data.
+
+### Structure of the data
+
+Each product object in products.json includes the following fields:
+
+**id**: A unique identifier for each product.
+**name**: The name of the product, which is a combination of color, category, and index.
+**description**: A brief description of the product.
+**category**: The category to which the product belongs. Categories include "Bags", "Shoes", "Accessories".
+**price**: The regular price of the product.
+**discountedPrice**: The discounted price of the product, which is 20% less than the regular price.
+**rating**: The product's rating on a scale from 0 to 5.
+**image**: The relative path to the product's image file. The images are named based on the color and category of the product.
+**color**: The color of the product. Colors include "Black", "Brown", "Red", "Blue", "Green".
+
+### Customization
+
+The generateProducts.js script can be customized to generate more complex product data or to include more fields as per your requirements. The products' categories, and colors are defined at the beginning of the script and can be modified to fit your needs. The number of products generated (currently set to 50) can also be adjusted by changing the limit in the for loop.
+
+
+
 ## How to Run the Application
 
 1. Clone the repository into your local machine.
