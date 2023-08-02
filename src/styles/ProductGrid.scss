@@ -5,15 +5,15 @@
     gap: 20px;
     margin-bottom: 20px;
     
-    @media (width <= 1600px) {
+    @media (max-width: 1600px) {
         grid-template-columns: repeat(3, 1fr); /* Two columns on small screens */
     }
 
-    @media (width <= 1200px) {
+    @media (max-width: 1280px) {
         grid-template-columns: repeat(2, 1fr); /* Two columns on small screens */
     }
 
-    @media (width <= 600px) {
+    @media (max-width: 480px) {
         grid-template-columns: 1fr; /* One column on small screens */
     }
 }

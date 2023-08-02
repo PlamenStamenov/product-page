@@ -21,7 +21,9 @@
         height: 200px;
 
         img {
-            object-fit: contain;
+            overflow: hidden;
+            height: 200px;
+            width: 100%;
             transition: transform var(--transition-duration) ease-in-out; /* animate image on hover */
 
             &:hover {

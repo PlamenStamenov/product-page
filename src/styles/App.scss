@@ -53,7 +53,7 @@ body {
             grid-area: footer;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
             grid-template-areas: 
             "header header header"
             "filter filter filter"
