@@ -28,8 +28,8 @@ const ProductTile = ({ product }) => {
                 <div className="prices">
                     {product.discountedPrice ? (
                         <>
-                            <span className="price">${product.discountedPrice}</span>
-                            <span className="price discounted">${product.price}</span>
+                            <span className="price">${product.price}</span>
+                            <span className="price discounted">${product.discountedPrice}</span>
                         </>
                     ) : (
                         <span className="price">${product.price}</span>
